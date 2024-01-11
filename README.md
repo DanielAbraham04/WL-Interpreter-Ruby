@@ -7,10 +7,10 @@ WL programs use two kinds of data structures, namely numbers and singly-linked l
 The LS will keep two storage areas, a program memory that stores a WL program loaded from the input file, and a data memory holding identifiers declared in the program and the values bound to each identifier. In addition, the WL maintains a program counter (PC) storing the line number of the instruction being currently executed. Executing a WL program consists of the following two steps:
 1. Read a WL program from the input file. The program is stored in the memory starting at address (i.e., line) 0, the first line of code read from the input file.
 2. Execute a command loop consisting of three commands:
-  o – Execute a single line of code, starting from line 0. The PC and the data memory are updated according to the instruction. The resulting values of the data memory and the PC are   
+o – Execute a single line of code, starting from line 0. The PC and the data memory are updated according to the instruction. The resulting values of the data memory and the PC are   
 printed on the console.
-  a – Executes all the instructions until a halt instruction is encountered or there are no more instructions to be executed. The values of the PC and the data memory are printed.
-  q– Quits the command loop.
+a – Executes all the instructions until a halt instruction is encountered or there are no more instructions to be executed. The values of the PC and the data memory are printed.
+q – Quits the command loop.
 
 The syntax and semantics of WL instructions is given below.
 VARINT x i - This instruction assigns an integer i to a variable x. Variable x is implicitly declared the first time it is used.
