@@ -14,12 +14,12 @@ q – Quits the command loop.
 
 The syntax and semantics of WL instructions is given below.   
 VARINT x i - This instruction assigns an integer i to a variable x. Variable x is implicitly declared the first time it is used.   
-VARLIST y arg1, arg2, ... - This instruction assigns a list to a variable y. Variable y is implicitly declared the first time it is used. The list will contain a variable number or arguments provided in a comma-separated sequence.   
-COMBINE list1 list2 - Each argument arg1, arg2, etc. can be either an integer constant or a variable denoting a list or an integer. Argument list list1 is concatenated with list2. The resulting list is stored back into list1.   
+VARLIST y arg1, arg2, ... - This instruction assigns a list to a variable y. Variable y is implicitly declared the first time it is used. The list will contain a variable number or arguments provided in a comma-separated sequence. Each argument arg1, arg2, etc. can be either an integer constant or a variable denoting a list or an integer.  
+COMBINE list1 list2 - Argument list list1 is concatenated with list2. The resulting list is stored back into list1.   
 GET x i list - The i-th element of list is assigned to variable x. Variable x is implicitly declared the first time it is used.   
 SET x i list - The i-th element of list is set to x. x could be integer constant or a variable denoting either a list or an integer.    
 COPY list1 list2 - The content of list2 is deep copied into list1.   
 CHS x - This statement changes the sign of the integer value bound to x.   
 ADD x y - This statement adds the integers bound to the two arguments and stores the result in x.   
-IF x i - If x is an empty list or the number zero, jump to instruction at line i   
+IF x i - If x is an empty list or the number zero, jump to instruction at line i.  
 HLT - Terminates program execution.
