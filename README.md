@@ -8,6 +8,18 @@ The LS will keep two storage areas, a program memory that stores a WL program lo
 1. Read a WL program from the input file. The program is stored in the memory starting at address (i.e., line) 0, the first line of code read from the input file.
 2. Execute a command loop consisting of three commands:
   o – Execute a single line of code, starting from line 0. The PC and the data memory are updated according to the instruction. The resulting values of the data memory and the PC are   
-      printed on the console.
+printed on the console.
   a – Executes all the instructions until a halt instruction is encountered or there are no more instructions to be executed. The values of the PC and the data memory are printed.
   q– Quits the command loop.
+
+The syntax and semantics of WL instructions is given below.
+VARINT x i - This instruction assigns an integer i to a variable x. Variable x is implicitly declared the first time it is used.
+VARLIST y arg1, arg2, ... - This instruction assigns a list to a variable y. Variable y is implicitly declared the first time it is used. The list will contain a variable number or arguments provided in a comma-separated sequence.
+COMBINE list1 list2 - Each argument arg1, arg2, etc. can be either an integer constant or a variable denoting a list or an integer. Argument list list1 is concatenated with list2. The resulting list is stored back into list1.
+GET x i list - The i-th element of list is assigned to variable x. Variable x is implicitly declared the first time it is used.
+SET x i list - The i-th element of list is set to x. x could be integer constant or a variable denoting either a list or an integer. 
+COPY list1 list2 - The content of list2 is deep copied into list1.
+CHS x - This statement changes the sign of the integer value bound to x.
+ADD x y - This statement adds the integers bound to the two arguments and stores the result in x.
+IF x i - If x is an empty list or the number zero, jump to instruction at line i
+HLT - Terminates program execution.
